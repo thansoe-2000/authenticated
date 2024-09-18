@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
@@ -17,6 +17,10 @@ def loginPage(request):
             login(request, user)
             return redirect('index_page')
     return render(request, 'pages/pages-login.html')
+
+def logoutPage(request):
+    logout(request)
+    return redirect('login_page')
 
 def register(request):
     return render(request, 'pages/pages-register.html')
