@@ -3,7 +3,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{% url "index_page" %}">
+        <a class="nav-link " href="{% url 'index_page' %}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -34,14 +34,14 @@
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{% url "register_page" %}">
+        <a class="nav-link collapsed" href="{% url 'register_page' %}">
           <i class="bi bi-card-list"></i>
           <span>Register</span>
         </a>
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{% url "login_page" %}">
+        <a class="nav-link collapsed" href="{% url 'login_page' %}">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
@@ -62,7 +62,7 @@
       </li>
       
       <!-- End Blank Page Nav -->
-        <a href="{% url "login_page" %}">
+        <a href="{% url 'login_page' %}">
          <div class="d-grid gap-2 mt-3">
            <button class="btn btn-primary" type="button">Log Out</button>
          </div>
