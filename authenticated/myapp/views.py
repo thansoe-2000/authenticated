@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
+from django.core.mail import EmailMessage
 # Create your views here.
 
 @login_required(login_url='login_page')
 def index(request):
+   
     return render(request, 'layout/index.html')
 
 def loginPage(request):
@@ -43,3 +45,13 @@ def registerPage(request):
 
 def profile(request):
     return render(request, 'pages/users-profile.html')
+
+def contactPage(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return redirect('success_page')
+    return render(request, 'pages/contact.html')
+
+def success(request):
+    return HttpResponse('Success!')
